@@ -1,41 +1,38 @@
-# telescope-rg
+# telescope-locate
 
-`telescope-rg` is an extension for [telescope.nvim][], which enables users to utilize [ripgrep (rg)](https://github.com/BurntSushi/ripgrep) within the telescope interface.
+`telescope-locate` is an extension for [telescope.nvim][], which enables users to utilize locate command within the telescope interface.
 
 [telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
-[ripgrep (rg)]: https://github.com/BurntSushi/ripgrep
 
 # Setup
 
 To load the extension, use the following command:
 
 ```lua
-require('telescope').load_extension('rg')
+require('telescope').load_extension('locate')
 ```
 
 # Usage
 
-This will also register the search results in the quickfix list.
-
 ```vim
-:Rg your-search-query
+:Locate your-search-query
 ```
 
 or
 
 ```vim
-:Telescope rg query=your-search-query
+:Telescope locate query=your-search-query
 ```
 
-## Pass extra command options to rg
+## Pass extra command options to locate
 
 ```vim
-:Telescope rg query=your-search-query type=py
-:Rg! --type=py your-search-query
+:Telescope locate query=your-search-query nofollow=1
+:Locate! --nofollow your-search-query
 ```
 
 means
 
 ```shell
-$ rg --type=py your-search-query
+$ locate --nofollow your-search-query
 ```
